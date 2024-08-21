@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class jumper : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float jumpPower;
+    public Rigidbody rigid;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            rigid.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
+        }
     }
 }
